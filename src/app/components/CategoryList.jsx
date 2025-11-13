@@ -1,21 +1,23 @@
+import Link from "next/link";
+import Image from "next/image";
 import { Suspense } from "react";
 import CategoryElement from "./CategoryElement";
 
-const CategoryList = () => {
+const scrollFilterComponent = async () => {
   return (
-    <Suspense>
-      <FetchCategories />
+    <Suspense fallback={<div className="p-4">Loading categories…</div>}>
+      <FetchCategory />
     </Suspense>
   );
 };
 
-const FetchCategories = async () => {
+export default scrollFilterComponent;
+
+const FetchCategory = async () => {
   "use server";
   const response = await fetch("https://dummyjson.com/products/category-list");
   const categories = await response.json();
   return categories.map((category, index) => (
-    <CategoryElement category={category} key={index}></CategoryElement>
+    <CategoryElement key={index} category={category} />
   ));
 };
-
-export default CategoryList;

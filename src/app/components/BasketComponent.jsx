@@ -2,7 +2,7 @@
 import useStore from "../store/shop";
 import { FaRegStar, FaStar } from "react-icons/fa6";
 
-const ShopEle = ({ id }) => {
+const BasketComponent = ({ id }) => {
   const { shop, toggleshop } = useStore();
 
   console.log(shop);
@@ -19,4 +19,4 @@ const ShopEle = ({ id }) => {
   }
 };
 
-export default ShopEle;
+export default BasketComponent;
