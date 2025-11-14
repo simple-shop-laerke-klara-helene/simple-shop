@@ -7,9 +7,9 @@ export default function detail({ params }) {
 
   return (
    <>
-    <header>
-      <Header />
-    </header>
+     <header className="col-[full] grid grid-cols-subgrid">
+        <Header />
+      </header>
 
      <main>
          <Suspense fallback={<div>Loading product...</div>}>
