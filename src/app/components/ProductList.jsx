@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 import BasketComponent from "./BasketComponent";
+import AddProductButton from "./AddProductButton";
 
 
 const ProductList = ({ category }) => {
@@ -24,7 +25,7 @@ const FetchProduct = async ({ category }) => {
   return products.map((product) => (
     <div className="grid" key={product.id}>
       <button className="col-start-1 row-start-1 flex justify-end">
-        <BasketComponent id={product.id} />
+        
       </button>
       <Link href={`/products/${product.id}`}>
         <div className="rounded-lg p-2 shadow-md ">
@@ -48,7 +49,8 @@ const FetchProduct = async ({ category }) => {
           </div>
         </div>
       </Link>
-      <a href="" className="border color-light-grey shadow-2xl rounded-lg px-4 py-3 bg-gray-100 justify-center items-center grid">Læg i Kurv</a>
+      <AddProductButton product={product} />
+      {/* <a href="" className="border color-light-grey shadow-2xl rounded-lg px-4 py-3 bg-gray-100 justify-center items-center grid">Læg i Kurv</a> */}
     </div>
   ));
 };

@@ -38,7 +38,7 @@ async function ProductListContainer({ searchParams }) {
   const {category} = await searchParams;
   console.log(category)
   return (
-    <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,300px))] gap-6 p-4 grid-row-subgrid">
+    <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,300px))] p-4 gap-6 grid-row-subgrid">
       <ProductList category={category} />
     </div>
   );
