@@ -26,15 +26,15 @@ const FetchProduct = async ({ category }) => {
       <button className="col-start-1 row-start-1 flex justify-end">
         <BasketComponent id={product.id} />
       </button>
-      <Link href={`/detalje/${product.id}`}>
-        <div className="rounded-2xl p-2 shadow-md">
+      <Link href={`/products/${product.id}`}>
+        <div className="rounded-lg p-2 shadow-md ">
           <Image
             loading="eager"
             alt="cat"
             src={product.thumbnail} 
             width={300}
             height={200}
-            className="-mx-2 -mt-2 mb-2 w-[calc(100%+1rem)] max-w-none rounded-t-2xl"
+            className="-mx-2 -mt-2 mb-2 w-[calc(100%+1rem)] max-w-none rounded-lg"
           />
           <div className="font-semibold tracking-wide font-stretch-extra-condensed">
             {product.title}
@@ -48,6 +48,7 @@ const FetchProduct = async ({ category }) => {
           </div>
         </div>
       </Link>
+      <a href="" className="border color-light-grey shadow-2xl rounded-lg px-4 py-3 bg-gray-100 justify-center items-center grid">Læg i Kurv</a>
     </div>
   ));
 };
