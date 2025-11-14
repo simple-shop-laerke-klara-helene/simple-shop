@@ -1,8 +1,8 @@
-import Footer from "./components/Footer";
+
 import { Suspense } from "react";
-import ProductList from "./components/ProductList";
-import CategoryList from "./components/CategoryList";
-import Header from "./components/Header";
+import ProductList from "@/app/components/ProductList";
+import CategoryList from "@/app/components/CategoryList";
+import Header from "@/app/components/Header";
 
 export default function Home({ searchParams }) {
   return (
