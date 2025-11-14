@@ -20,20 +20,19 @@
   --color-button-text: var(--button-text);
 }
 
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --salmon: #f2968f;
+  --dark-text: #333333;
+  --box-shadow: #d5d5d57a;
 
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --salmon: #F2968F;
-    --dark-text: #333333;
-    --box-shadow: #d5d5d57a;
-
-    --content-width: 200rem;
-    --button-blue: #ACD7FF;
-    --button-pink: #EDA8B3;
-    --button-green: #C5E59C;
-    --button-yellow: #F1E689;
-    --button-text: #6B8B42;
+  --content-width: 200rem;
+  --button-blue: #acd7ff;
+  --button-pink: #eda8b3;
+  --button-green: #c5e59c;
+  --button-yellow: #f1e689;
+  --button-text: #6b8b42;
 
   --step--2: clamp(0.7813rem, 0.7736rem + 0.0341vw, 0.8rem);
   --step--1: clamp(0.9375rem, 0.9119rem + 0.1136vw, 1rem);
@@ -43,28 +42,28 @@
   --step-3: clamp(1.944rem, 1.7405rem + 0.9044vw, 2.4414rem);
   --step-4: clamp(2.3328rem, 2.0387rem + 1.3072vw, 3.0518rem);
   --step-5: clamp(2.7994rem, 2.384rem + 1.8461vw, 3.8147rem);
-  }
+}
 
-body  {
+body {
   background-color: rgb(255, 255, 255);
   font-family: Arial, Helvetica, sans-serif;
   display: grid;
-  grid-template-columns: [full-start] 1fr [content-start] minmax(0,600px) [hero-start] minmax(0, 600px) [content-end] 1fr [hero-end];
+  grid-template-columns: [full-start] 1fr [content-start] minmax(
+      0,
+      600px
+    ) [hero-start] minmax(0, 600px) [content-end] 1fr [hero-end];
   grid-template-rows: auto 1fr auto;
 }
 
-main{
+main {
   grid-column: content;
   background: rgb(255, 255, 255);
 }
-
-
 
 h1 {
   font-size: var(--step-2);
   font-weight: 700;
   line-height: 1.1;
-  margin-bottom: 1rem;
 }
 
 h2 {
@@ -94,6 +93,3 @@ p {
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
-
-
-
