@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import ProductList from "@/app/components/ProductList";
 import CategoryList from "@/app/components/CategoryList";
 import Header from "@/app/components/Header";
+import BasketComponent from "@/app/components/BasketComponent";
 
 export default function Home({ searchParams }) {
   return (
@@ -17,27 +18,27 @@ export default function Home({ searchParams }) {
             <CategoryList />
           </ul>
         </section>
-        {/* <div className="grid grid-cols-2 gap-3 p-4">
-       
-        </div> */}
-
+    <section className="grid grid-cols-[1fr-auto]  gap-4">
         <Suspense>
           <ProductListContainer searchParams={searchParams} />
         </Suspense>
+  
+        <BasketComponent/>
+    </section>
       </main>
-      {/* <footer className="col-[full] grid grid-cols-subgrid">
-        <Footer />
-      </footer> */}
+
+     
+    
     </>
   );
 }
-//2556 x 1179
+
 
 async function ProductListContainer({ searchParams }) {
   const {category} = await searchParams;
   console.log(category)
   return (
-    <div className="grid grid-cols-2 gap-3 p-4">
+    <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,300px))] gap-6 p-4 grid-row-subgrid">
       <ProductList category={category} />
     </div>
   );
