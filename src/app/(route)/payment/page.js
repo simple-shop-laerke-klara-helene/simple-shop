@@ -12,7 +12,7 @@ export default function detail({ params }) {
 
      <main>
          <Suspense fallback={<div>Loading product...</div>}>
-            <DetailComp params={params} />
+      
          </Suspense>
     </main>
     </>

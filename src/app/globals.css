@@ -58,10 +58,7 @@ main{
   background: rgb(255, 255, 255);
 }
 
-.border {
-  border: solid;
-  border-color: grey;
-}
+
 
 h1 {
   font-size: var(--step-2);
