@@ -4,8 +4,13 @@ import DetailComp from "@/app/components/DetailComp";
 
 export default function detail({ params }) {
   return (
+
+   <>
+     <header className="col-[full] grid grid-cols-subgrid">
+
     <>
       <header>
+
         <Header />
       </header>
 
