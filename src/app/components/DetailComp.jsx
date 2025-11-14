@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { CiStar } from "react-icons/ci";
-import FavoritElm from "./FavoritElm";
 import { MdOutlineArrowBackIos } from "react-icons/md"
+import BasketComponent from "./BasketComponent";
 
 const DetailComponent = async ({ params }) => {
   const { id } = await params;
@@ -12,7 +12,7 @@ const DetailComponent = async ({ params }) => {
     <>
       <div className="justify-items-center p-4">
         <div className="grid">
-          <FavoritElm id={product.id} className="color-white z-1 col-5 row-1 m-5 w-7 justify-items-end rounded-full bg-black/20 p-1 backdrop-blur-md"/>
+          <BasketComponent id={product.id} className="color-white z-1 col-5 row-1 m-5 w-7 justify-items-end rounded-full bg-black/20 p-1 backdrop-blur-md"/>
           <Image
             loading="eager"
             src={product.thumbnail}
