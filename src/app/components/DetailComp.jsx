@@ -1,5 +1,4 @@
-import Link from "next/link";
-import Image from "next/image";
+import DetailPicsComp from "./DetailPicsComp";
 import BasketComponent from "./BasketComponent";
 import { FaStar, FaRegStar } from "react-icons/fa";
 
@@ -9,45 +8,12 @@ const DetailComponent = async ({ params }) => {
   const product = await response.json();
   return (
     <>
-      <a href="/products">{"< tilbage"}</a>
+      <a href="/products" className="hover:text-dark-text cursor-pointer">
+        {"< tilbage"}
+      </a>
       <div className="grid grid-cols-[2fr_1fr] gap-4">
         <section className="grid grid-cols-[1fr_1fr] gap-4">
-          <div>
-            <Image
-              loading="eager"
-              src={product.thumbnail}
-              alt="Cat picture"
-              width={300}
-              height={300}
-              className="w-100 rounded-lg shadow-xl"
-            />
-            <div class="flex items-start justify-start gap-2">
-              <Image
-                loading="eager"
-                src={product.thumbnail}
-                alt="Cat picture"
-                width={90}
-                height={90}
-                className="rounded-lg shadow-xl"
-              />
-              <Image
-                loading="eager"
-                src={product.thumbnail}
-                alt="Cat picture"
-                width={90}
-                height={90}
-                className="rounded-lg shadow-xl"
-              />
-              <Image
-                loading="eager"
-                src={product.thumbnail}
-                alt="Cat picture"
-                width={90}
-                height={90}
-                className="rounded-lg shadow-xl"
-              />
-            </div>
-          </div>
+          <DetailPicsComp product={product} />
           <div className="mt-2">
             <h1>{product.title}</h1>
             <p>{product.description}</p>
@@ -82,7 +48,6 @@ const DetailComponent = async ({ params }) => {
   );
 };
 
-//rating-værdien fra decimaler til stjerne-illustrationer:
 const renderStars = (rating) => {
   return Array.from({ length: 5 }, (_, i) => {
     const filled = i < Math.round(rating);
