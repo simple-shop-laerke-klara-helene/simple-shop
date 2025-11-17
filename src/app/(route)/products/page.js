@@ -4,8 +4,10 @@ import ProductList from "@/app/components/ProductList";
 import CategoryList from "@/app/components/CategoryList";
 import Header from "@/app/components/Header";
 import BasketComponent from "@/app/components/BasketComponent";
+import SearchBar from "@/app/components/SearchBar";
 
-export default function Home({ searchParams }) {
+export default async function Home({ searchParams }) {
+
   return (
     <>
       <header className="col-[full] grid grid-cols-subgrid">
@@ -18,16 +20,15 @@ export default function Home({ searchParams }) {
             <CategoryList />
           </ul>
         </section>
+  <Suspense>
+        <SearchBar />
+
     <section className="grid grid-cols-[1fr-auto]  gap-4">
-        <Suspense>
-          <ProductListContainer searchParams={searchParams} />
-        </Suspense>
-  
+        <ProductListContainer searchParams={searchParams} />
         <BasketComponent/>
     </section>
+        </Suspense>
       </main>
-
-     
     
     </>
   );
@@ -35,11 +36,14 @@ export default function Home({ searchParams }) {
 
 
 async function ProductListContainer({ searchParams }) {
-  const {category} = await searchParams;
-  console.log(category)
+  // const {category} = await searchParams;
+  const params = await searchParams;
+  const category = params?.category || "";
+  const search = params?.search || "";
+
   return (
     <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,300px))] p-4 gap-6 grid-row-subgrid">
-      <ProductList category={category} />
+      <ProductList category={category} search={search} />
     </div>
   );
 }
