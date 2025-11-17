@@ -5,22 +5,30 @@ import BasketComponent from "./BasketComponent";
 import AddProductButton from "./AddProductButton";
 
 
-const ProductList = ({ category }) => {
+const ProductList = ({ category, search }) => {
   return (
     <Suspense fallback={<div>Loading products...</div>}>
-      <FetchProduct category={category} />
+      <FetchProduct category={category} search={search} />
     </Suspense>
   );
 };
 export default ProductList;
 
-const FetchProduct = async ({ category }) => {
-  const url = category
-    ? `https://dummyjson.com/products/category/${category}`
-    : "https://dummyjson.com/products";
+const FetchProduct = async ({ category, search }) => {
+  let url;
+
+  if (search) {
+    url = `https://dummyjson.com/products/search?q=${search}`;
+  } else if (category) {
+    url = `https://dummyjson.com/products/category/${category}`;
+  } else {
+    url = "https://dummyjson.com/products";
+  }
 
   const response = await fetch(url);
-  const { products } = await response.json();
+  // const { products } = await response.json();
+  const data = await response.json();
+  const products = data.products || [];
 
   return products.map((product) => (
     <div className="grid" key={product.id}>
