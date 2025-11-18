@@ -31,7 +31,18 @@ export default function Cart() {
   const decrease = useCartStore((state) => state.decreaseQuantity);
   const remove = useCartStore((state) => state.removeFromCart);
 
-  if (cart.length === 0) return <p>Kurven er tom</p>;
+  if (cart.length === 0)
+    return (
+      <div className="fixed top-50 right-4 w-64 bg-white shadow-lg rounded-xl flex flex-col max-h-96 p-4">
+        <div className="p-4 border-b">
+          <h2 className="font-semibold text-lg">Kurv</h2>
+          <hr />
+        </div>
+        <div className="p-4 border-b">
+          <p className="font-semibold mb-0">Kurven er tom</p>
+        </div>
+      </div>
+    );
 
   return (
     <div className="fixed top-40 right-4 w-64 bg-white shadow-lg rounded-xl flex flex-col max-h-96">
