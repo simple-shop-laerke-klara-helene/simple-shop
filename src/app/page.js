@@ -9,8 +9,8 @@ export default function Home({ searchParams }) {
       </header>
       <main className="col-[full] grid grid-cols-subgrid">
         <div className="col-[content] row-2">
-          <h1 className=" pb-2 font-bold ">SimpleShop!</h1>
-          <Link href="/products" className="mt-4 px-4 py-2 bg-black rounded-lg text-white cursor-pointer">
+          <h1 className=" pb-2 font-bold mb-4">SimpleShop!</h1>
+          <Link href="/products" className=" cursor-pointer border color-light-grey shadow-2xl rounded-lg px-4 py-3 bg-gray-200 mt-2 mb-5">
             Browse Products
           </Link>
         </div>
