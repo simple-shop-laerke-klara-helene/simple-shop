@@ -12,11 +12,11 @@ export default function Cart() {
     return (
       <div className="fixed top-50 right-4 w-64 bg-white shadow-lg rounded-xl flex flex-col max-h-96 p-4">
         <div className="p-4 border-b">
-          <h2 className="font-semibold text-lg">Kurv</h2>
+          <h2 className="font-semibold text-lg">Basket</h2>
           <hr />
         </div>
         <div className="p-4 border-b">
-          <p className="font-semibold mb-0">Kurven er tom</p>
+          <p className="font-semibold mb-0">The basket is empty</p>
         </div>
       </div>
     );
@@ -24,12 +24,12 @@ export default function Cart() {
   return (
     <div className="fixed top-40 right-4 w-64 bg-white shadow-lg rounded-xl flex flex-col max-h-96">
       <div className="p-4 border-b">
-        <h2 className="font-semibold text-lg">Kurv</h2>
+        <h2 className="font-semibold text-lg">Basket</h2>
         <hr />
       </div>
 
       <div className="flex-1 overflow-y-auto p-4 space-y-2">
-        {cart.length === 0 && <p>Kurven er tom</p>}
+        {cart.length === 0 && <p>The basket is empty</p>}
 
         {cart.map((item) => (
           <div key={item.id} className="border-b pb-2 bg-gray-200 rounded-lg p-3">
