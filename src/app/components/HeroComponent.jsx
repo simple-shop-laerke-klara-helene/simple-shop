@@ -17,7 +17,6 @@ const FetchProduct = async ({ category }) => {
   const url = "https://dummyjson.com/products/";
 
   const response = await fetch(url);
-  // const { products } = await response.json();
   const data = await response.json();
   const products = data.products || [];
 

@@ -11,8 +11,6 @@ export default function Cart() {
 
   const subtotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
-  // if (cart.length === 0) return <p>Kurven er tom</p>;
-
   return (
     <section className="mt-4 grid">
       <h1 className="font-semibold mb-2">Kurv</h1>

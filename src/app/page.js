@@ -6,8 +6,10 @@ import { Suspense } from "react";
 export default function Home({ params }) {
   return (
     <>
-      <header className="col-[full] grid grid-cols-subgrid">
-        <Header />
+      <header className="col-[full] grid  mb-10 grid-cols-subgrid">
+       
+          <Header />
+
       </header>
       <main className="col-[full] grid ">
         <div className="grid grid-cols-subgrid grid-rows-subgrid">
