@@ -13,13 +13,13 @@ export default function Cart() {
 
   return (
     <section className="mt-4 grid">
-      <h1 className="font-semibold mb-2">Kurv</h1>
+      <h1 className="font-semibold mb-2">Basket</h1>
 
       <div className="grid grid-cols-[1fr_auto] gap-2">
         <div className="">
           {cart.length === 0 && (
             <div className="bg-gray-200 grid justify-center items-center rounded-lg my-4 h-90">
-              <h1 className="justify-center items-center">Kurven er tom</h1>
+              <h1 className="justify-center items-center">The basket is empty</h1>
             </div>
           )}
 
@@ -54,7 +54,7 @@ export default function Cart() {
         </div>
         <div className="bg-gray-200 rounded-lg p-6 w-70 h-90 my-4 flex flex-col gap-5 sticky top-0">
           <h2>Subtotal: {subtotal.toFixed(2)} €</h2>
-          <h2>Levering: 0,00 €</h2>
+          <h2>Delivery: 0,00 €</h2>
           <hr />
           <h2>Total: {subtotal.toFixed(2)} €</h2>
 
